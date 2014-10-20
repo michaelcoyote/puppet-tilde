@@ -4,6 +4,7 @@ class tilde ($use_quota = true, $addtl_packages = [], $users, $hostname) {
   include tilde::mail
   include tilde::skel
   include tilde::irc
+	include tilde::identd
 
   class {'tilde::nntp':
     hostname => $hostname,
