@@ -1,4 +1,5 @@
 class tilde::packages {
+
   package { ['tmux',
              'htop',
              'screen',
@@ -13,5 +14,18 @@ class tilde::packages {
 
     ensure => present,
 
+  }
+	
+  case $operatingsystem {
+    centos, redhat: { $identd = "oidentd" }
+    ubuntu, debian: { $identd = "oidentd" }
+    default: { $identd = undef }
+  }
+
+  if $identd != undef {
+    package { 'identd':
+      name => $identd,
+      ensure => present
+    }
   }
 }
