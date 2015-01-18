@@ -10,7 +10,8 @@ class tilde::packages {
              'lynx',
              'tree',
              'finger',
-             'cowsay']:
+             'cowsay',
+             'uucp']:
 
     ensure => present,
 

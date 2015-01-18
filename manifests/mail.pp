@@ -5,6 +5,8 @@ class tilde::mail {
   }
 
   postfix::config { 'default_transport':
-    value => 'error: outside mail not deliverable'
+    value => 'uucp',
+    'disable_dns_lookups': 
+    value => 'yes'
   }
 }
