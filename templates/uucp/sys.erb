@@ -1,0 +1,11 @@
+<% @uucphosts.each do |uucphost| -%>
+system <%= uucphost %>
+myname @fqdn
+time any
+address <%= uucphost %>
+port <%= uucphost %>_ssh
+protocol t
+remote-send /
+remote-receive ~
+chat ""
+<% end -%>
